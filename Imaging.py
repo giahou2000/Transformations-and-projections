@@ -1,6 +1,15 @@
 import numpy as np
 
 def rasterize(p2d, Rows, Columns, H, W):
+    """
+    p2d: the coordinates of the points of the camera system
+    Rows: height for the final image
+    Columns: width for the final image
+    H: dimension of the camera canvas in inches
+    W: dimension of the camera canvas in inches
+    
+    """
+
     # Initialize Prast and arrays of normalized x and y
     _, dim2 = p2d.shape
     n2d = np.ones((2, dim2))

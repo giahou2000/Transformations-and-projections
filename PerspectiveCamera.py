@@ -2,7 +2,16 @@ import numpy as np
 from CoordinateSystems import ChangeCoordinateSystem
 
 def PinHole(f, cv, cx, cy, cz, p3d):
-
+    """
+    f: distance between the camera canvas and the camera center
+    cv: camera center
+    cx: x vector of the camera
+    cy: y vector of the camera
+    cz: z vector of the camera
+    p3d: 3D points
+    
+    """
+    
     # Find the rotation matrix for the change pf coordinates
     rotation_matrix = np.column_stack((cx, cy, cz))
 
@@ -21,6 +30,15 @@ def PinHole(f, cv, cx, cy, cz, p3d):
 
 def CameraLookingAt(f, cv, cK, cup, p3d):
 
+    """
+    f: distance between the camera canvas and the camera center
+    cv: camera center
+    cK: the point where the camera is directed
+    cup: unit up vector
+    p3d: 3D points
+    
+    """
+
     # cz computation
     CK = cK - cv
     CKnorm = np.linalg.norm(CK)
@@ -36,6 +54,7 @@ def CameraLookingAt(f, cv, cK, cup, p3d):
     # cx computation
     cx = np.outer(cy, cz)
 
+    # get the projection
     p2d, depth = PinHole(f, cv, cx, cy, cz, p3d)
 
     return p2d, depth

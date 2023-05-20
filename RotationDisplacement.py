@@ -3,6 +3,15 @@ import numpy as np
 
 def RotateTranslate(cp, theta, u, A, t):
 
+    """
+    cp: a point in 3D space
+    theta: the angle of clockwise rotation
+    u: vector parallel to the axis of rotation
+    A: point of the axis of rotation
+    t: displacement vector
+    
+    """
+
     # Calculate the rotation matrix
     R = rotmat(theta, u)
     print("R: ")

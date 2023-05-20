@@ -1,6 +1,13 @@
 import numpy as np
 
 def rotmat(theta, u):
+
+    """
+    theta: the angle of clockwise rotation
+    u: vector parallel to the axis of rotation
+    
+    """
+
     # Normalize the vector u if it is not already a unit vector
     u = u / np.linalg.norm(u)
     
