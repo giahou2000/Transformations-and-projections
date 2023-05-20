@@ -3,7 +3,7 @@ import numpy as np
 def rasterize(p2d, Rows, Columns, H, W):
     # Initialize Prast and arrays of normalized x and y
     _, dim2 = p2d.shape
-    n2d = np.zeros((2, dim2))
+    n2d = np.ones((2, dim2))
 
     # Compute rasterized image by finding the nearest pixel using floor
     for k in range(dim2):
