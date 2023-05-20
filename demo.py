@@ -6,10 +6,10 @@ data = dict(data)
 p3d = np.array(data['verts3d'])
 faces = np.array(data['faces'])
 vcolors = np.array(data['vcolors'])
-u = data['u']
-ck = data['c_lookat']
-cu = data['c_up']
-cv = data['c_org']
-t1, t2 = data['t_1'], data['t_2']
-phi = data['phi']
+u = np.array(data['u'])
+ck = np.array(data['c_lookat'])
+cu = np.array(data['c_up'])
+cv = np.array(data['c_org'])
+t1, t2 = np.array(data['t_1']), np.array(data['t_2'])
+phi = np.array(data['phi'])
 
