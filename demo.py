@@ -1,9 +1,4 @@
 import numpy as np
-from RotationMatrix import rotmat
-from RotationDisplacement import RotateTranslate
-from CoordinateSystems import ChangeCoordinateSystem
-from PerspectiveCamera import PinHole, CameraLookingAt
-from Imaging import rasterize
 
 # # Extra details
 # theta = np.pi  # 180 degrees/pi rads clockwise rotation
