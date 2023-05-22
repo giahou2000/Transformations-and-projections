@@ -45,6 +45,8 @@ def CameraLookingAt(f, cv, cK, cup, p3d):
     cz = CK/CKnorm
 
     # cy computation
+    cup = np.reshape(cup, (3,))
+    cz = np.reshape(cz, (3,))
     dot_product = np.dot(cup, cz)
     cz_norm_squared = np.linalg.norm(cz) ** 2
     projection = (dot_product / cz_norm_squared) * cz

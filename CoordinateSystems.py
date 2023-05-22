@@ -9,7 +9,7 @@ def ChangeCoordinateSystem(cp, R, c0):
     """
 
     # Compute the displacement
-    cp_disp = cp + c0
+    cp_disp = cp + c0.T
 
     # Compute the rotation
     temp = []

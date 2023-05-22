@@ -1,4 +1,5 @@
 import numpy as np
+from photography import RenderObject
 
 # Load and separate the data of the 3D image
 data = np.load('h2.npy', allow_pickle=True).tolist()
@@ -13,3 +14,11 @@ cv = np.array(data['c_org'])
 t1, t2 = np.array(data['t_1']), np.array(data['t_2'])
 phi = np.array(data['phi'])
 
+# Print the first version of the image
+H = 15
+W = 15
+Rows = 512
+Columns = 512
+f = 70
+p3d = np.transpose(p3d)
+I = RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
