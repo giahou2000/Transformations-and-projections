@@ -19,11 +19,11 @@ def PinHole(f, cv, cx, cy, cz, p3d):
     new_p3d = ChangeCoordinateSystem(p3d, rotation_matrix, cv)
 
     # Compute the projections
-    _, points_num = new_p3d.shape()
+    points_num = new_p3d.shape[0]
     p2d = []
     depth = []
     for i in range(points_num):
-        p2d.append((f*new_p3d[i][0])/new_p3d[i][2], (f*new_p3d[i][1])/new_p3d[i][2])
+        p2d.append([(f*new_p3d[i][0])/new_p3d[i][2], (f*new_p3d[i][1])/new_p3d[i][2]])
         depth.append(new_p3d[i][2])
 
     return p2d, depth
@@ -54,7 +54,7 @@ def CameraLookingAt(f, cv, cK, cup, p3d):
     cy = t / np.linalg.norm(t)
 
     # cx computation
-    cx = np.outer(cy, cz)
+    cx = np.cross(cy, cz)
 
     # get the projection
     p2d, depth = PinHole(f, cv, cx, cy, cz, p3d)
