@@ -12,7 +12,7 @@ def PinHole(f, cv, cx, cy, cz, p3d):
     
     """
     
-    # Find the rotation matrix for the change pf coordinates
+    # Find the rotation matrix for the change coordinates
     rotation_matrix = np.column_stack((cx, cy, cz))
 
     # Change coordinate system
@@ -48,10 +48,11 @@ def CameraLookingAt(f, cv, cK, cup, p3d):
     cup = np.reshape(cup, (3,))
     cz = np.reshape(cz, (3,))
     dot_product = np.dot(cup, cz)
-    cz_norm_squared = np.linalg.norm(cz) ** 2
-    projection = (dot_product / cz_norm_squared) * cz
+    cz_norm = np.linalg.norm(cz)
+    projection = (dot_product / cz_norm) * cz
     t = cup - projection
     cy = t / np.linalg.norm(t)
+    cy = np.reshape(cy, (3,))
 
     # cx computation
     cx = np.cross(cy, cz)
