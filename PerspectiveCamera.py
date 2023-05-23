@@ -16,7 +16,7 @@ def PinHole(f, cv, cx, cy, cz, p3d):
     rotation_matrix = np.column_stack((cx, cy, cz))
 
     # Change coordinate system
-    new_p3d = ChangeCoordinateSystem(p3d, rotation_matrix, cv)
+    new_p3d = ChangeCoordinateSystem(p3d, rotation_matrix.T, cv)
 
     # Compute the projections
     points_num = new_p3d.shape[0]
