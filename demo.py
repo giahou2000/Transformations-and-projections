@@ -1,6 +1,7 @@
 import numpy as np
 from photography import RenderObject
 import matplotlib.pyplot
+from RotationDisplacement import RotateTranslate
 
 # Load and separate the data of the 3D image
 data = np.load('h2.npy', allow_pickle=True)
@@ -25,3 +26,14 @@ I = RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
 matplotlib.pyplot.imshow(I)
 # matplotlib.pyplot.savefig('flat.png')
 matplotlib.pyplot.show()
+
+# # Print the second version of the image
+# disp_p3d = p3d + t1
+# I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
+# matplotlib.pyplot.imshow(I)
+# # matplotlib.pyplot.savefig('flat.png')
+# matplotlib.pyplot.show()
+
+# # Print the third version of the image
+# A = np.array([0, 0, 0])
+# disp_p3d = RotateTranslate(p3d, phi, u, A, t1)
