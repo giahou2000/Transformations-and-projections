@@ -16,7 +16,7 @@ def PinHole(f, cv, cx, cy, cz, p3d):
     rotation_matrix = np.column_stack((cx, cy, cz))
 
     # Change coordinate system
-    new_p3d = ChangeCoordinateSystem(p3d, rotation_matrix.T, cv)
+    new_p3d = ChangeCoordinateSystem(p3d, rotation_matrix, cv)
 
     # Compute the projections
     points_num = new_p3d.shape[0]
@@ -43,13 +43,14 @@ def CameraLookingAt(f, cv, cK, cup, p3d):
     CK = cK - cv
     CKnorm = np.linalg.norm(CK)
     cz = CK/CKnorm
+    cz = np.reshape(cz, (3,))
 
     # cy computation
     cup = np.reshape(cup, (3,))
     cz = np.reshape(cz, (3,))
     dot_product = np.dot(cup, cz)
     cz_norm = np.linalg.norm(cz)
-    projection = (dot_product / cz_norm) * cz
+    projection = (dot_product / (cz_norm**2)) * cz
     t = cup - projection
     cy = t / np.linalg.norm(t)
     cy = np.reshape(cy, (3,))

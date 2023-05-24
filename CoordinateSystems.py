@@ -2,7 +2,7 @@ import numpy as np
 
 def ChangeCoordinateSystem(cp, R, c0):
     """
-    cp: the point of the 3D space that will change its coordinates to another coordinate system
+    cp: the point(s) of the 3D space that will change its coordinates to another coordinate system
     R: the rotation matrix
     c0: the dispacement vector
     
