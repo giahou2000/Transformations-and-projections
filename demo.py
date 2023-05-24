@@ -28,7 +28,7 @@ matplotlib.pyplot.imshow(I)
 matplotlib.pyplot.show()
 
 # # Print the second version of the image
-# disp_p3d = p3d + t1
+disp_p3d = p3d + t1
 # I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
 # matplotlib.pyplot.imshow(I)
 # # matplotlib.pyplot.savefig('flat.png')
