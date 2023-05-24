@@ -13,13 +13,13 @@ def rasterize(p2d, Rows, Columns, H, W):
     n2d = []
 
     # Calculate scaling factors
-    scale_x = Rows / W
-    scale_y = Columns / H
+    scale_y = Rows / H
+    scale_x = Columns / W
 
+    # rasterize image
     for point in p2d:
-        x = round(point[0] * scale_x + Rows/2)
-        y = round(point[1] * scale_y + Columns/2)
-        # Set pixel value to 255 at the computed coordinates
+        x = round((point[0] + W/2) * scale_x)
+        y = round((point[1] + H/2) * scale_y)
         n2d.append([x, y])
     n2d = np.array(n2d)
     

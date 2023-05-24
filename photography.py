@@ -24,7 +24,6 @@ def RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup):
 
     # Rasterize the 2D image
     n2d = rasterize(p2d, Rows, Columns, H, W)
-    print(n2d)
     # Paint the triangles
     I = render(n2d, faces, vcolors, depth, 'gouraud')
     return I
