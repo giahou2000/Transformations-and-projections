@@ -9,14 +9,18 @@ def rasterize(p2d, Rows, Columns, H, W):
     W: dimension of the camera canvas in inches
     
     """
+    # Create an empty image
+    n2d = []
 
-    # Initialize p2d
-    dim2 = len(p2d)
-    n2d = np.ones((dim2, 2))
+    # Calculate scaling factors
+    scale_x = Rows / W
+    scale_y = Columns / H
 
-    # Compute rasterized image by finding the nearest pixel using floor
-    for k in range(dim2):
-        n2d[k][0] = np.floor((1 - (p2d[k][0] + W / 2) / W) * Rows)
-        n2d[k][1] = np.floor((1 - (p2d[k][1] + H / 2) / H) * Columns)
+    for point in p2d:
+        x = round(point[0] * scale_x + Rows/2)
+        y = round(point[1] * scale_y + Columns/2)
+        # Set pixel value to 255 at the computed coordinates
+        n2d.append([x, y])
+    n2d = np.array(n2d)
     
     return n2d

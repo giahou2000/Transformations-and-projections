@@ -1,5 +1,6 @@
 import numpy as np
 from photography import RenderObject
+import matplotlib.pyplot
 
 # Load and separate the data of the 3D image
 data = np.load('h2.npy', allow_pickle=True)
@@ -21,3 +22,6 @@ Columns = 512
 f = 70
 p3d = np.transpose(p3d)
 I = RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
+matplotlib.pyplot.imshow(I)
+# matplotlib.pyplot.savefig('flat.png')
+matplotlib.pyplot.show()
