@@ -14,13 +14,13 @@ def RotateTranslate(cp, theta, u, A, t):
 
     # Calculate the rotation matrix
     R = rotmat(theta, u)
-    print("R: ")
-    print(R)
+    # print("R: ")
+    # print(R)
     
     # Translate the point cp to a coordinate system centered at point A
     translated_cp = cp - A
-    print("translated_cp: ")
-    print(translated_cp)
+    # print("translated_cp: ")
+    # print(translated_cp)
 
     # Rotate the translated point
     temp = []
@@ -30,16 +30,16 @@ def RotateTranslate(cp, theta, u, A, t):
         for i in range(len(translated_cp.shape)):
             temp.append(np.dot(R, translated_cp[i]))
         rotated_cp = np.array(temp)
-    print("rotated_cp: ")
-    print(rotated_cp)
+    # print("rotated_cp: ")
+    # print(rotated_cp)
     
     # Translate the rotated point back to the original coordinate system
     rotated_cp = rotated_cp + A
-    print("rotated_cp: ")
-    print(rotated_cp)
+    # print("rotated_cp: ")
+    # print(rotated_cp)
 
     cq = rotated_cp + t
-    print("cq: ")
-    print(cq)
+    # print("cq: ")
+    # print(cq)
 
     return cq

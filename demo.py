@@ -42,9 +42,9 @@ matplotlib.pyplot.imshow(I)
 # matplotlib.pyplot.savefig('I_3.png')
 matplotlib.pyplot.show()
 
-# Print the fourth version of the image
-disp_p3d = disp_p3d + t2
-I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
-matplotlib.pyplot.imshow(I)
-# # matplotlib.pyplot.savefig('I_4.png')
-matplotlib.pyplot.show()
+# # Print the fourth version of the image
+# disp_p3d = disp_p3d + t2
+# I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
+# matplotlib.pyplot.imshow(I)
+# # # matplotlib.pyplot.savefig('I_4.png')
+# matplotlib.pyplot.show()
