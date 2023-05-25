@@ -23,7 +23,7 @@ def PinHole(f, cv, cx, cy, cz, p3d):
     p2d = []
     depth = []
     for i in range(points_num):
-        p2d.append([(f*new_p3d[i][0])/new_p3d[i][2], (f*new_p3d[i][1])/new_p3d[i][2]])
+        p2d.append([(f * new_p3d[i][0]) / new_p3d[i][2], (f * new_p3d[i][1]) / new_p3d[i][2]])
         depth.append(new_p3d[i][2])
 
     return p2d, depth

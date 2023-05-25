@@ -24,7 +24,7 @@ f = 70
 p3d = np.transpose(p3d)
 I = RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
 matplotlib.pyplot.imshow(I)
-# matplotlib.pyplot.savefig('flat.png')
+# matplotlib.pyplot.savefig('I_0_1.png')
 matplotlib.pyplot.show()
 
 # # Print the second version of the image
