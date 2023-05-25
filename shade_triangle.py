@@ -1,6 +1,3 @@
-import numpy as np
-import statistics
-import interpolate_vector as interpol
 import flat
 import gouraud
 
