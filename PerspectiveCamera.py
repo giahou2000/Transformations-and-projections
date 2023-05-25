@@ -25,8 +25,6 @@ def PinHole(f, cv, cx, cy, cz, p3d):
     for i in range(points_num):
         p2d.append([(f * new_p3d[i][0]) / new_p3d[i][2], (f * new_p3d[i][1]) / new_p3d[i][2]])
         depth.append(new_p3d[i][2])
-    print(len(p2d))
-    print(len(depth))
     return p2d, depth
 
 def CameraLookingAt(f, cv, cK, cup, p3d):

@@ -24,10 +24,12 @@ def RotateTranslate(cp, theta, u, A, t):
 
     # Rotate the translated point
     temp = []
+    print("My test")
+    print(translated_cp.shape)
     if len(translated_cp.shape) == 1:
         rotated_cp = np.dot(translated_cp, R)
     else:
-        for i in range(len(translated_cp.shape)):
+        for i in range(translated_cp.shape[0]):
             temp.append(np.dot(translated_cp[i], R))
         rotated_cp = np.array(temp)
     # print("rotated_cp: ")

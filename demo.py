@@ -39,12 +39,12 @@ A = np.array([0, 0, 0])
 disp_p3d = RotateTranslate(disp_p3d, phi, u, A, np.array([0, 0, 0]))
 I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
 matplotlib.pyplot.imshow(I)
-# matplotlib.pyplot.savefig('I_3.png')
+matplotlib.pyplot.savefig('I_3.png')
 matplotlib.pyplot.show()
 
-# # Print the fourth version of the image
-# disp_p3d = disp_p3d + t2
-# I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
-# matplotlib.pyplot.imshow(I)
-# # # matplotlib.pyplot.savefig('I_4.png')
-# matplotlib.pyplot.show()
+# Print the fourth version of the image
+disp_p3d = disp_p3d + t2
+I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
+matplotlib.pyplot.imshow(I)
+matplotlib.pyplot.savefig('I_4.png')
+matplotlib.pyplot.show()
