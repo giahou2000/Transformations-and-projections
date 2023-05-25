@@ -16,14 +16,13 @@ def RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup):
     cv: camera center
     cK: the point where the camera is directed
     cup: unit up vector
+
+    It takes a 3D picture of a 3D object
     
     """
 
     # Compute 2D projection and depth of the image
     p2d, depth = CameraLookingAt(f, cv , cK , cup , p3d)
-    # for element in p2d:
-    #     if element[0] < -7.5 or element[1] < -7.5 or element[0] > 7.5 or element[1] > 7.5:
-    #         print(element)
 
     # Rasterize the 2D image
     n2d = rasterize(p2d, Rows, Columns, H, W)

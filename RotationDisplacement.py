@@ -22,12 +22,9 @@ def RotateTranslate(cp, theta, u, A, t):
 
     # Rotate the shifted points
     temp = []
-    if len(shifted_cp.shape[0]) == 1:
-        rotated_cp = np.dot(shifted_cp, R)
-    else:
-        for i in range(shifted_cp.shape[0]):
-            temp.append(np.dot(shifted_cp[i], R))
-        rotated_cp = np.array(temp)
+    for i in range(shifted_cp.shape[0]):
+        temp.append(np.dot(shifted_cp[i], R))
+    rotated_cp = np.array(temp)
     
     # Shift the rotated point back to the original coordinate system
     rotated_cp = rotated_cp + A
