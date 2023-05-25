@@ -24,14 +24,14 @@ f = 70
 p3d = np.transpose(p3d)
 I = RenderObject(p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
 matplotlib.pyplot.imshow(I)
-# matplotlib.pyplot.savefig('I_1.png')
+matplotlib.pyplot.savefig('I_1.png')
 matplotlib.pyplot.show()
 
 # Print the second version of the image
 disp_p3d = p3d + t1
 I = RenderObject(disp_p3d, faces, vcolors, H, W, Rows, Columns, f, cv, cK, cup)
 matplotlib.pyplot.imshow(I)
-# # matplotlib.pyplot.savefig('I_2.png')
+matplotlib.pyplot.savefig('I_2.png')
 matplotlib.pyplot.show()
 
 # Print the third version of the image
