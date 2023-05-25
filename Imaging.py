@@ -7,6 +7,8 @@ def rasterize(p2d, Rows, Columns, H, W):
     Columns: width for the final image
     H: dimension of the camera canvas in inches
     W: dimension of the camera canvas in inches
+
+    
     
     """
     # Create an empty image

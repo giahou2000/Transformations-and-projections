@@ -9,39 +9,30 @@ def RotateTranslate(cp, theta, u, A, t):
     u: vector parallel to the axis of rotation
     A: point of the axis of rotation
     t: displacement vector
+
+    It rotates the given points at a 3D plain by computing the rotation matrix and then it shifts them by t.
     
     """
 
     # Calculate the rotation matrix
     R = rotmat(theta, u)
-    # print("R: ")
-    # print(R)
     
-    # Translate the point cp to a coordinate system centered at point A
-    translated_cp = cp - A
-    # print("translated_cp: ")
-    # print(translated_cp)
+    # Shift the point cp to a coordinate system centered at point A
+    shifted_cp = cp - A
 
-    # Rotate the translated point
+    # Rotate the shifted points
     temp = []
-    print("My test")
-    print(translated_cp.shape)
-    if len(translated_cp.shape) == 1:
-        rotated_cp = np.dot(translated_cp, R)
+    if len(shifted_cp.shape[0]) == 1:
+        rotated_cp = np.dot(shifted_cp, R)
     else:
-        for i in range(translated_cp.shape[0]):
-            temp.append(np.dot(translated_cp[i], R))
+        for i in range(shifted_cp.shape[0]):
+            temp.append(np.dot(shifted_cp[i], R))
         rotated_cp = np.array(temp)
-    # print("rotated_cp: ")
-    # print(rotated_cp)
     
-    # Translate the rotated point back to the original coordinate system
+    # Shift the rotated point back to the original coordinate system
     rotated_cp = rotated_cp + A
-    # print("rotated_cp: ")
-    # print(rotated_cp)
 
+    # Shift the points about a distance of t
     cq = rotated_cp + t
-    # print("cq: ")
-    # print(cq)
 
     return cq

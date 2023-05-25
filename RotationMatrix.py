@@ -5,6 +5,8 @@ def rotmat(theta, u):
     """
     theta: the angle of clockwise rotation
     u: vector parallel to the axis of rotation
+
+    It computes the clockwise rotation matrix for theta rads about the u axis
     
     """
 
@@ -14,7 +16,7 @@ def rotmat(theta, u):
     # Components of the unit vector
     ux, uy, uz = u
     
-    # Construct the rotation matrix
+    # Construct the rotation matrix R
     cos_theta = np.cos(theta)
     sin_theta = np.sin(theta)
     R = np.array([[cos_theta + (ux**2)*(1 - cos_theta), ux*uy*(1 - cos_theta) - uz*sin_theta, ux*uz*(1 - cos_theta) + uy*sin_theta],
